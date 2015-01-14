@@ -16,8 +16,8 @@ module.exports = function (config, libraries, services) {
     config.options = config.options || {};
     if (config.unix_socket) {
         var client = redis.createClient(config.unix_socket, config.options);
-    } else if (config.host && config.port) {
-        var client = redis.createClient(config.host, config.port, config.options);
+    } else if (config.port && config.host) {
+        var client = redis.createClient(config.port, config.host, config.options);
     } else {
         var client = redis.createClient(config.options);
     }
