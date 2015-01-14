@@ -1,6 +1,7 @@
 # DragonNode.js Redis
 Bundle with services to develop applications with redis
 - Initialize client service with the redis connection
+- Initialize cache service to abstract the caching logic with redis
 
 # Installation
 - Add bundle to the "package.json":
@@ -22,7 +23,8 @@ module.exports = {
                     port: 6379,
                     host: '127.0.0.1',
                     options: {}
-                }
+                },
+                cache: {}
             }
         }
     }
