@@ -21,6 +21,9 @@ module.exports = function (config, libraries, services) {
     } else {
         var client = redis.createClient(config.options);
     }
+    if (config.password) {
+        client.auth(config.password);
+    }
     client.setJSON = function (key, value, callback) {
         value = JSON.stringify(value);
         client.set(key, value, callback);
