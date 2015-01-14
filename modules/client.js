@@ -13,7 +13,11 @@
 module.exports = function (config, libraries, services) {
     var redis = libraries.redis;
 
-    var client = redis.createClient(config.port, config.host, config.options);
+    if (config.unix_socket) {
+        var client = redis.createClient(config.unix_socket, config.options);
+    } else {
+        var client = redis.createClient(config.host, config.port, config.options);
+    }
     client.setJSON = function (key, value, callback) {
         value = JSON.stringify(value);
         client.set(key, value, callback);
