@@ -28,7 +28,7 @@ module.exports = function (config, libraries, services) {
                             return;
                         }
                         if (options.expire) {
-                            client.expire(options.expire);
+                            client.expire(key, options.expire);
                         }
                     });
                 });
