@@ -11,9 +11,16 @@
  */
 
 module.exports = function (config, libraries, services) {
-    var redis = libraries.redis;
+    var redis = libraries.redis,
+        url = libraries.url;
 
     config.options = config.options || {};
+    if (config.uri) {
+        var redisURL = url.parse(config.uri);
+        config.port = redisURL.port;
+        config.host = redisURL.hostname;
+        config.password = redisURL.auth.split(':')[1];
+    }
     if (config.unix_socket) {
         var client = redis.createClient(config.unix_socket, config.options);
     } else if (config.port && config.host) {
