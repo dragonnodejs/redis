@@ -6,8 +6,8 @@
     "readmeFilename": "README.md",
     "main": "bundle.js",
     "dependencies": {
-        "dragonnodejs": "3.*",
-        "redis": "*"
+        "dragonnodejs": "~3.0.3",
+        "redis": "~0.12.1"
     },
     "repository": {
         "type": "git",
