@@ -3,7 +3,7 @@
 /**
  * Initialize cache service to abstract the caching logic with redis
  * @example
-    cache: {}
+    cache: { disabled: false }
  */
 
 module.exports = function (config, libraries, services) {
@@ -13,7 +13,7 @@ module.exports = function (config, libraries, services) {
         options = options || {};
         client.getJSON(key, function (err, value) {
             var hit = true;
-            if (value) {
+            if (value && !config.disabled) {
                 if (callback(value, hit)) {
                     hit = false;
                 };

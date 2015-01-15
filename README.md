@@ -24,7 +24,7 @@ module.exports = {
                     host: '127.0.0.1',
                     options: {}
                 },
-                cache: {}
+                cache: { disabled: false }
             }
         }
     }
