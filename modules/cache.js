@@ -10,10 +10,14 @@ module.exports = function (config, libraries, services) {
     var client = services.client;
 
     var cache = function (key, fallback, callback, options) {
+        if (config.disabled) {
+            fallback(callback);
+            return;
+        }
         options = options || {};
         client.getJSON(key, function (err, value) {
             var hit = true;
-            if (value && !config.disabled) {
+            if (value) {
                 if (callback(value, hit)) {
                     hit = false;
                 };
