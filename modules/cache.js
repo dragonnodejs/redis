@@ -1,7 +1,7 @@
 "use strict";
 
 /**
- * Initialize cache service to abstract the caching logic with redis
+ * Initialize cache service to abstract the caching logic with Redis
  * @example
     cache: { disabled: false }
  */

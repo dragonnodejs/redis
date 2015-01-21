@@ -1,6 +1,6 @@
 "use strict";
 
-// Bundle with services to develop applications with redis
+// Bundle with services to develop applications with Redis
 
 module.exports = function (config, _, services) {
     config = {
@@ -11,7 +11,6 @@ module.exports = function (config, _, services) {
         },
         directory: __dirname + '/modules/',
         modules: {
-            npm: {},
             directory: config
         }
     };

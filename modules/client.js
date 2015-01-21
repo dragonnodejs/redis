@@ -19,7 +19,9 @@ module.exports = function (config, libraries, services) {
         var redisURL = url.parse(config.uri);
         config.port = redisURL.port;
         config.host = redisURL.hostname;
-        config.password = redisURL.auth.split(':')[1];
+        if (redisURL.auth) {
+            config.password = redisURL.auth.split(':')[1];
+        }
     }
     if (config.unix_socket) {
         var client = redis.createClient(config.unix_socket, config.options);

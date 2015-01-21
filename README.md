@@ -1,14 +1,14 @@
 # DragonNode.js Redis
-Bundle with services to develop applications with redis
-- Initialize client service with the redis connection
-- Initialize cache service to abstract the caching logic with redis
+Bundle with services to develop applications with Redis
+- Initialize client service with the Redis connection
+- Initialize cache service to abstract the caching logic with Redis
 
 # Installation
 - Add bundle to the "package.json":
 ```javascript
 {
     "dependencies": {
-        "dragonnodejs-redis": "~1.7.0"
+        "dragonnodejs-redis": "~1.8.0"
     }
 }
 ```
