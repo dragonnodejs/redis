@@ -1,7 +1,7 @@
 "use strict";
 
 /**
- * Initialize client service with the redis connection
+ * Initialize client service with the Redis connection
  * @example
     client: {
         port: 6379,
