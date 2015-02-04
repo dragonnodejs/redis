@@ -1,4 +1,6 @@
 "use strict";
+/*global module:false */
+/*global __dirname:false */
 
 // Bundle with services to develop applications with Redis
 

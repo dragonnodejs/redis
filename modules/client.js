@@ -1,4 +1,5 @@
 "use strict";
+/*global module:false */
 
 /**
  * Initialize client service with the Redis connection
@@ -23,12 +24,13 @@ module.exports = function (config, libraries, services) {
             config.password = redisURL.auth.split(':')[1];
         }
     }
+    var client;
     if (config.unix_socket) {
-        var client = redis.createClient(config.unix_socket, config.options);
+        client = redis.createClient(config.unix_socket, config.options);
     } else if (config.port && config.host) {
-        var client = redis.createClient(config.port, config.host, config.options);
+        client = redis.createClient(config.port, config.host, config.options);
     } else {
-        var client = redis.createClient(config.options);
+        client = redis.createClient(config.options);
     }
     if (config.password) {
         client.auth(config.password);

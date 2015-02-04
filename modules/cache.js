@@ -1,4 +1,5 @@
 "use strict";
+/*global module:false */
 
 /**
  * Initialize cache service to abstract the caching logic with Redis
@@ -20,7 +21,7 @@ module.exports = function (config, libraries, services) {
             if (value) {
                 if (callback(value, hit)) {
                     hit = false;
-                };
+                }
             } else {
                 hit = false;
             }

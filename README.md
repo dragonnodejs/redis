@@ -8,7 +8,7 @@ Bundle with services to develop applications with Redis
 ```javascript
 {
     "dependencies": {
-        "dragonnodejs-redis": "~1.8.0"
+        "dragonnodejs-redis": "~1.8.1"
     }
 }
 ```
