@@ -8,7 +8,7 @@ Bundle with services to develop applications with Redis
 ```javascript
 {
     "dependencies": {
-        "dragonnodejs-redis": "^1.8.2"
+        "dragonnodejs-redis": "^1.8.3"
     }
 }
 ```
@@ -17,7 +17,7 @@ Bundle with services to develop applications with Redis
 ```javascript
 var config = {
     modules: {
-        npm: {
+        npm: [
             [require('dragonnodejs-redis'), {
                 client: {
                     port: 6379,
@@ -26,7 +26,7 @@ var config = {
                 },
                 cache: { disabled: false }
             }]
-        }
+        ]
     }
 };
 ```
