@@ -6,10 +6,9 @@
 
 module.exports = function (config, _, services) {
     config = {
-        npm: __dirname + '/node_modules/',
         libraries: {
-            nodejs: { url: 'url' },
-            npm: { redis: 'redis' }
+            url: require('url'),
+            redis: require('redis')
         },
         directory: __dirname + '/modules/',
         modules: {

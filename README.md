@@ -8,24 +8,24 @@ Bundle with services to develop applications with Redis
 ```javascript
 {
     "dependencies": {
-        "dragonnodejs-redis": "~1.8.1"
+        "dragonnodejs-redis": "^1.8.2"
     }
 }
 ```
 - Run "npm install"
-- Extend the configuration "app/config.js":
+- Extend the configuration in "app.js":
 ```javascript
-module.exports = {
+var config = {
     modules: {
         npm: {
-            'dragonnodejs-redis': {
+            [require('dragonnodejs-redis'), {
                 client: {
                     port: 6379,
                     host: '127.0.0.1',
                     options: {}
                 },
                 cache: { disabled: false }
-            }
+            }]
         }
     }
 };
