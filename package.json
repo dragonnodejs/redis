@@ -1,7 +1,7 @@
 {
     "name": "dragonnodejs-redis",
     "description": "Bundle with services to develop applications with Redis",
-    "version": "1.8.3",
+    "version": "2.0.0",
     "author": "Christoph Herrmann <developer@dragonprojects.de>",
     "readmeFilename": "README.md",
     "main": "bundle.js",

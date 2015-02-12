@@ -1,6 +1,7 @@
 # DragonNode.js Redis
 Bundle with services to develop applications with Redis
 - Initialize client service with the Redis connection
+- Opportunity to set and get complexer values over JSON encoding
 - Initialize cache service to abstract the caching logic with Redis
 
 # Installation
@@ -8,7 +9,7 @@ Bundle with services to develop applications with Redis
 ```javascript
 {
     "dependencies": {
-        "dragonnodejs-redis": "^1.8.3"
+        "dragonnodejs-redis": "^2.0.0"
     }
 }
 ```
@@ -19,11 +20,8 @@ var config = {
     modules: {
         npm: [
             [require('dragonnodejs-redis'), {
-                client: {
-                    port: 6379,
-                    host: '127.0.0.1',
-                    options: {}
-                },
+                client: {},
+                json: {},
                 cache: { disabled: false }
             }]
         ]

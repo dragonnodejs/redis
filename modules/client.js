@@ -4,18 +4,28 @@
 /**
  * Initialize client service with the Redis connection
  * @example
+    // Connect with URI
+    client: { uri: 'redis://host:port' }
+
+    // Connect with port and host
     client: {
         port: 6379,
-        host: '127.0.0.1',
-        options: {}
+        host: '127.0.0.1'
     }
+
+    // Connect with unix_socket
+    client: { unix_socket: '' }
+
+    // Connect with the default localhost:6379
+    client: {}
  */
 
 module.exports = function (config, libraries, services) {
     var redis = libraries.redis,
         url = libraries.url;
 
-    config.options = config.options || {};
+    // Split an URI to the informations about port, host and password
+
     if (config.uri) {
         var redisURL = url.parse(config.uri);
         config.port = redisURL.port;
@@ -24,29 +34,23 @@ module.exports = function (config, libraries, services) {
             config.password = redisURL.auth.split(':')[1];
         }
     }
+
+    // Instanziate the client with the different possible constructors
+
     var client;
-    if (config.unix_socket) {
-        client = redis.createClient(config.unix_socket, config.options);
-    } else if (config.port && config.host) {
+    if (config.port && config.host) {
         client = redis.createClient(config.port, config.host, config.options);
+    } else if (config.unix_socket) {
+        client = redis.createClient(config.unix_socket, config.options);
     } else {
         client = redis.createClient(config.options);
     }
+
+    // Use the password for the authentication at the Redis server
+
     if (config.password) {
         client.auth(config.password);
     }
-    client.setJSON = function (key, value, callback) {
-        value = JSON.stringify(value);
-        client.set(key, value, callback);
-    };
-    client.getJSON = function (key, callback) {
-        client.get(key, function (err, value) {
-            if (value) {
-                value = JSON.parse(value);
-            }
-            callback(err, value);
-        });
-    };
 
     services.client = client;
 };

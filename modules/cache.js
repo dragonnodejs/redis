@@ -10,6 +10,22 @@
 module.exports = function (config, libraries, services) {
     var client = services.client;
 
+    /**
+     * Separate load and use a value with a cache layer
+     * @example
+        var cache = services.cache;
+        cache(
+            'key',
+            function (callback) {
+                // load the value
+                var value;
+                callback(value);
+            },
+            function (value) {
+                // use the value
+            }
+        );
+     */
     var cache = function (key, fallback, callback, options) {
         if (config.disabled) {
             fallback(callback);
