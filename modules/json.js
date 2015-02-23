@@ -1,5 +1,4 @@
 "use strict";
-/*global module:false */
 
 /**
  * Opportunity to set and get complexer values over JSON encoding

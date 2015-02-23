@@ -1,5 +1,4 @@
 "use strict";
-/*global module:false */
 
 /**
  * Initialize cache service to abstract the caching logic with Redis

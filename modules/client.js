@@ -1,5 +1,4 @@
 "use strict";
-/*global module:false */
 
 /**
  * Initialize client service with the Redis connection
