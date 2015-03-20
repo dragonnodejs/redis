@@ -9,7 +9,7 @@ Bundle with services to develop applications with Redis
 ```javascript
 {
     "dependencies": {
-        "dragonnodejs-redis": "^2.0.0"
+        "dragonnodejs-redis": "^2.0.1"
     }
 }
 ```
@@ -22,7 +22,9 @@ var config = {
             [require('dragonnodejs-redis'), {
                 client: {},
                 json: {},
-                cache: { disabled: false }
+                cache: { 
+                    disabled: false 
+                }
             }]
         ]
     }

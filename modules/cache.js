@@ -3,7 +3,9 @@
 /**
  * Initialize cache service to abstract the caching logic with Redis
  * @example
-    cache: { disabled: false }
+    cache: {
+        disabled: false
+    }
  */
 
 module.exports = function (config, libraries, services) {
