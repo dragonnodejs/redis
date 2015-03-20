@@ -4,7 +4,7 @@ Bundle with services to develop applications with Redis
 - Opportunity to set and get complexer values over JSON encoding
 - Initialize cache service to abstract the caching logic with Redis
 
-# Installation
+## Installation
 - Add bundle to the "package.json":
 ```javascript
 {
