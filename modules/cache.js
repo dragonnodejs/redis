@@ -1,4 +1,4 @@
-"use strict";
+'use strict';
 
 /**
  * Initialize cache service to abstract the caching logic with Redis

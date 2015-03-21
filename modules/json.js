@@ -1,4 +1,4 @@
-"use strict";
+'use strict';
 
 /**
  * Opportunity to set and get complexer values over JSON encoding

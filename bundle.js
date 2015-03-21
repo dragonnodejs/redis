@@ -1,4 +1,4 @@
-"use strict";
+'use strict';
 
 // Bundle with services to develop applications with Redis
 

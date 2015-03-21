@@ -1,4 +1,4 @@
-"use strict";
+'use strict';
 
 /**
  * Initialize client service with the Redis connection
