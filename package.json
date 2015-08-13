@@ -2,7 +2,8 @@
     "name": "dragonnodejs-redis",
     "description": "Bundle with services to develop applications with Redis",
     "version": "2.0.2",
-    "author": "Christoph Herrmann <developer@dragonprojects.de>",
+    "homepage": "http://github.com/dragonnodejs/redis",
+    "license": "MIT",
     "readmeFilename": "README.md",
     "main": "bundle.js",
     "dependencies": {
