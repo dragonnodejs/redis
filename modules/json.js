@@ -15,9 +15,13 @@ module.exports = function (config, libraries, services) {
         var client = services.client;
         client.setJSON('key', value);
      */
-    client.setJSON = function (key, value, callback) {
+    client.setJSON = function (key, value, callback, options) {
         value = JSON.stringify(value);
-        client.set(key, value, callback);
+        options = options || {};
+        if (!options.command) {
+            options.command = 'set';
+        }
+        client[options.command](key, value, callback);
     };
 
     /**
