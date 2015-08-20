@@ -1,17 +1,17 @@
 {
-    "name": "dragonnodejs-redis",
-    "description": "Bundle with services to develop applications with Redis",
-    "version": "2.1.0",
-    "homepage": "http://github.com/dragonnodejs/redis",
-    "license": "MIT",
-    "readmeFilename": "README.md",
-    "main": "bundle.js",
-    "dependencies": {
-        "dragonnodejs": "^4.0.4",
-        "redis": "^0.12.1"
-    },
-    "repository": {
-        "type": "git",
-        "url": "https://github.com/dragonnodejs/redis.git"
-    }
+  "name": "dragonnodejs-redis",
+  "description": "Bundle with services to develop applications with Redis",
+  "version": "2.1.0",
+  "homepage": "http://github.com/dragonnodejs/redis",
+  "license": "MIT",
+  "readmeFilename": "README.md",
+  "main": "bundle.js",
+  "dependencies": {
+    "dragonnodejs": "^4.0.4",
+    "redis": "^0.12.1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/dragonnodejs/redis.git"
+  }
 }
