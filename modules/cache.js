@@ -3,38 +3,38 @@
 /**
  * Initialize cache service to abstract the caching logic with Redis
  * @example
-    cache: {
+    ['modules/cache', {
         disabled: process.env.CACHE_DISABLED
-    }
+    }]
  */
 
-module.exports = function (config, libraries, services) {
-    var client = services.client;
+module.exports = (config, libraries, services) => {
+    let client = services.client;
 
     /**
      * Separate load and use a value with a cache layer
      * @example
-        var cache = services.cache;
+        let cache = services.cache;
         cache(
             'key',
-            function (callback) {
+            callback => {
                 // load the value
-                var value;
+                let value;
                 callback(value);
             },
-            function (value) {
+            value => {
                 // use the value
             }
         );
      */
-    var cache = function (key, fallback, callback, options) {
+    let cache = (key, fallback, callback, options) => {
         if (config.disabled) {
             fallback(callback);
             return;
         }
         options = options || {};
-        client.getJSON(key, function (err, value) {
-            var hit = true;
+        client.getJSON(key, (err, value) => {
+            let hit = true;
             if (value) {
                 if (callback(value, hit)) {
                     hit = false;
@@ -43,9 +43,9 @@ module.exports = function (config, libraries, services) {
                 hit = false;
             }
             if (!hit) {
-                fallback(function (value) {
+                fallback(value => {
                     callback(value);
-                    client.setJSON(key, value, function (err) {
+                    client.setJSON(key, value, err => {
                         if (err) {
                             return;
                         }

@@ -9,24 +9,24 @@ Bundle with services to develop applications with Redis
 ```javascript
 {
     "dependencies": {
-        "dragonnodejs-redis": "^2.0.2"
+        "dragonnodejs-redis": "^3.0.0"
     }
 }
 ```
 - Run "npm install"
 - Extend the configuration in "app.js":
 ```javascript
-var config = {
+let config = {
     modules: {
-        npm: [
-            [require('dragonnodejs-redis'), {
-                client: {},
-                json: {},
-                cache: { 
-                    disabled: process.env.CACHE_DISABLED
-                }
+        [require('dragonnodejs-redis'), [
+            ['modules/client', {
+                uri: process.env.REDISCLOUD_URL
+            }],
+            ['modules/json', {}],
+            ['modules/cache', {
+                disabled: process.env.CACHE_DISABLED
             }]
-        ]
+        ]]
     }
 };
 ```
