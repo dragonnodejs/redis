@@ -3,9 +3,7 @@
 /**
  * Initialize cache service to abstract the caching logic with Redis
  * @example
-    ['modules/cache', {
-        disabled: process.env.CACHE_DISABLED
-    }]
+    ['cache', { disabled: process.env.CACHE_DISABLED }]
  */
 
 module.exports = (config, libraries, services) => {
@@ -18,12 +16,11 @@ module.exports = (config, libraries, services) => {
         cache(
             'key',
             callback => {
-                // load the value
-                let value;
-                callback(value);
+                // Load the value
+                callback('value');
             },
             value => {
-                // use the value
+                // Use the value
             }
         );
      */

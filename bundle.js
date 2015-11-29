@@ -1,14 +1,11 @@
 'use strict';
 
-// Bundle with services to develop applications with Redis
+// Load the libraries and run the modules for the bundle
 
 module.exports = (config, _, services) => {
-    config = {
-        libraries: {
-            redis: require('redis')
-        },
-        directory: __dirname + '/',
-        modules: config
+    let directory = __dirname + '/modules/';
+    let libraries = {
+        redis: require('redis')
     };
-    require('dragonnodejs')(config, services);
+    require('dragonnodejs')(directory, config, libraries, services);
 };

@@ -1,16 +1,16 @@
 'use strict';
 
 /**
- * Opportunity to set and get complexer values over JSON encoding
+ * Opportunity to set and get values with JSON encoding
  * @example
-    ['modules/json', {}]
+    ['json']
  */
 
 module.exports = (config, libraries, services) => {
     let client = services.client;
 
     /**
-     * Convert a complexer value to JSON and set in Redis
+     * Convert a value to JSON and set it with the key in Redis
      * @example
         let client = services.client;
         client.setJSON('key', value);
